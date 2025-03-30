@@ -970,5 +970,12 @@
     <script src="/assets/dropdown/js/navbar-dropdown.js"></script>
     <script src="/assets/countdown/countdown.js"></script>
     <script src="/assets/theme/js/script.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        if (typeof D === "function") {
+          D();
+        }
+      });
+    </script>
   </body>
 </html>
