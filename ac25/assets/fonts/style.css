@@ -1,0 +1,20 @@
+@font-face {
+   font-family: 'new-spirit-700';
+   font-display: swap;
+   src: url('new-spirit-700/font.woff2');
+}
+@font-face {
+   font-family: 'new-spirit-500';
+   font-display: swap;
+   src: url('new-spirit-500/font.woff2');
+}
+@font-face {
+   font-family: 'new-spirit-400';
+   font-display: swap;
+   src: url('new-spirit-400/font.woff2');
+}
+@font-face {
+   font-family: 'new-spirit-300';
+   font-display: swap;
+   src: url('new-spirit-300/font.woff2');
+}
