@@ -392,57 +392,6 @@ $jscomp.polyfill(
         y(c, e, b);
       }
   }
-  function D() {
-    if (document.querySelector(".loop-container")) {
-      var a = function (c) {
-        var b = 0,
-          g = 0,
-          k = +c.children[0].dataset.speed || 0.05,
-          d = c.querySelector(".item"),
-          f = d.dataset.direction;
-        if (d) {
-          (function () {
-            c.querySelectorAll(".item").forEach(function (a) {
-              a.textContent = a.dataset.linewords + "\u00a0";
-            });
-          })();
-          c.style.cssText =
-            "position: relative; display: inline-flex; white-space: nowrap;";
-          c.children[1].style.cssText =
-            "position: absolute; left: " + 100 * -f + "%;";
-          var h = function () {
-              g += k;
-              b = 0.8 * b + 0.2 * g;
-              100 < g && ((b -= g), (g = 0));
-              c.style.transform = "translateX(" + b * f + "%)";
-              window.requestAnimationFrame(h);
-            },
-            l = new MutationObserver(function () {
-              document
-                .querySelectorAll(".loop-container")
-                .forEach(function (a) {
-                  a.style.transform = "";
-                });
-              l.disconnect();
-              a(c);
-            });
-          l.observe(d, {
-            attributes: !0,
-            attributeFilter: ["data-direction", "data-speed", "data-linewords"],
-          });
-          (function () {
-            window.addEventListener("scroll", function () {
-              return (g += 1.5 * k);
-            });
-          })();
-          h();
-        }
-      };
-      document.querySelectorAll(".loop-container").forEach(function (c) {
-        return a(c);
-      });
-    }
-  }
   function E() {
     var a = Array.from(document.querySelectorAll(".ticker__item"));
     if (0 !== a.length) {
@@ -1744,8 +1693,6 @@ $jscomp.polyfill(
       }
     });
   });
-  if (n) f(document).on("add.cards", D);
-  else window.addEventListener("DOMContentLoaded", D);
   if (n) f(document).on("add.cards", E);
   else window.addEventListener("DOMContentLoaded", E);
 })();
